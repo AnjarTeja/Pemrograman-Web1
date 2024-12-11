@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show/Hide Gambar dengan jQuery</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#BtnSembunyikan").click(function () {
+          $("#myImage").hide();
+        });
+
+        $("#BtnTampilkan").click(function () {
+          $("#myImage").show();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Show/Hide Gambar</h1>
+    <button id="BtnSembunyikan">Sembunyikan Gambar</button>
+    <button id="BtnTampilkan">Tampilkan Gambar</button>
+    <br /><br />
+    <img id="myImage" src="./f3c09f1ac1cb1e734e357e8c31e9503f.jpg" />
+  </body>
+</html>

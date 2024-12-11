@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="pemesanan.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Form Pemesanan</h1>
+      <form>
+        <table>
+          <tr>
+            <td><label for="id-pemesanan">ID Pemesan :</label></td>
+            <td><input type="number" id="durasi" min="1" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nama-pemesan">Nama Pemesan :</label></td>
+            <td><input type="text" id="nama-pemesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nomor-identitas">Nomor Identitas :</label></td>
+            <td><input type="number" id="durasi" min="1" required /></td>
+          </tr>
+          <tr>
+            <td><label for="tipe-kamar">Tipe Kamar :</label></td>
+            <td>
+              <select id="tipe-kamar" required>
+                <option value="">-- Pilih --</option>
+                <option value="standar">STANDAR</option>
+                <option value="deluxe">DELUXE</option>
+                <option value="family">FAMILY</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tanggal-pesan">Tanggal Pesan :</label></td>
+            <td><input type="date" id="tanggal-pesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="durasi">Durasi Menginap :</label></td>
+            <td>
+              <input
+                type="number"
+                id="durasi"
+                name="durasi"
+                min="1"
+                class="short-input"
+                required
+              />
+              <span> Hari </span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="breakfast">Termasuk Breakfast?</label></td>
+            <td>
+              <input type="checkbox" id="breakfast" />
+              <span> Ya </span>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="total-bayar">Total Bayar :</label></td>
+            <td><input type="text" id="total-bayar"/></td>
+          </tr>
+        </table>
+        <div class="form-buttons">
+          <button
+            type="submit"
+            name="tombol"
+            value="cek"
+            style="background-color: blue;color: white;(50, 179, 240)"
+          >
+            Simpan
+          </button>
+          <button
+            type="reset"
+            name="tombol"
+            value="cek"
+            style="background-color: red;color: white;(50, 179, 240)"
+          >
+            Batal
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

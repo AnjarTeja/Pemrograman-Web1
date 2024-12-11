@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Login</title>
+    <script>
+      function cekLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "123") {
+          alert("Login Sukses");
+          window.location.href = "index.html";
+        } else {
+          alert("Login Gagal");
+          window.location.href = "Tugas-1.html";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Form Login</h2>
+    <form onsubmit="return false;">
+      <table>
+        <tr>
+          <td><label for="username">Username:</label></td>
+          <td><input type="text" id="username" name="username" required /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td>
+            <input type="password" id="password" name="password" required />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="Login" onclick="cekLogin()" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

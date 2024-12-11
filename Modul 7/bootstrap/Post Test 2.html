@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Anggota</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      .member-photo {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="text-center">Data Anggota</h2>
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>Kode Anggota</th>
+            <th>NIM</th>
+            <th>Nama Lengkap</th>
+            <th>Prodi</th>
+            <th>Kelas</th>
+            <th>Jenis Kelamin</th>
+            <th>No. Telpon</th>
+            <th>Foto</th>
+            <th>Alamat</th>
+          </tr>
+        </thead>
+        <tbody id="memberTableBody"></tbody>
+      </table>
+      <nav>
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+      </nav>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      const members = [
+        {
+          kode: "A01",
+          nim: "20230810128",
+          nama: "Anjar",
+          prodi: "Teknik Informatika",
+          kelas: "TI-04",
+          gender: "Laki-laki",
+          telpon: "081234567890",
+          foto: "../Images/power ranger.jpg",
+          alamat: "Jalan A No.1",
+        },
+        {
+          kode: "A02",
+          nim: "20230810122",
+          nama: "Rian ",
+          prodi: "Teknik Informatika",
+          kelas: "TI-04",
+          gender: "Laki-Laki",
+          telpon: "081234567891",
+          foto: "../Images/spiderman.png",
+          alamat: "Jalan B No.2",
+        },
+        {
+          kode: "A03",
+          nim: "20230810130",
+          nama: "Albar",
+          prodi: "Teknik Informatika",
+          kelas: "TI-04",
+          gender: "Laki-Laki",
+          telpon: "081234567892",
+          foto: "../Images/ultraman.png",
+          alamat: "Jalan C No.3",
+        },
+      ];
+      const rowsPerPage = 2;
+      let currentPage = 1;
+      function renderTable(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        document.getElementById("memberTableBody").innerHTML = members
+          .slice(start, end)
+          .map(
+            (member) => `
+        <tr>
+          <td>${member.kode}</td>
+          <td>${member.nim}</td>
+          <td>${member.nama}</td>
+          <td>${member.prodi}</td>
+          <td>${member.kelas}</td>
+          <td>${member.gender}</td>
+          <td>${member.telpon}</td>
+          <td><img src="${member.foto}" class="member-photo" alt="Foto"></td>
+          <td>${member.alamat}</td>
+        </tr>
+      `
+          )
+          .join("");
+      }
+      function renderPagination() {
+        const totalPages = Math.ceil(members.length / rowsPerPage);
+        document.getElementById("pagination").innerHTML = Array.from(
+          { length: totalPages },
+          (_, i) =>
+            `<li class="page-item ${i + 1 === currentPage ? "active" : ""}">
+          <a class="page-link" href="#" onclick="goToPage(${i + 1})">${
+              i + 1
+            }</a>
+        </li>`
+        ).join("");
+      }
+      function goToPage(page) {
+        currentPage = page;
+        renderTable(page);
+        renderPagination();
+      }
+      goToPage(currentPage);
+    </script>
+  </body>
+</html>

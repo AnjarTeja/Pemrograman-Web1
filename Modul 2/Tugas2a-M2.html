@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data</title>
+  </head>
+  <html>
+    <h1>Tambah Data Kamar</h1>
+    <form>
+      <table>
+        <tr>
+          <td><label for="id-kamar">ID Kamar :</label></td>
+          <td>
+            <input type="number" id="id-kamar" name="id-kamar" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="gambar-ruangan">Gambar Ruangan :</label></td>
+          <td>
+            <img src="./download (1).jpg" alt="gambar ruangan1" />
+            <img src="./download (2).jpg" alt="gambar ruangan2" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="jenis-kamar">Jenis Kamar :</label></td>
+          <td>
+            <input type="text" id="jenis-kamar" name="jenis-kamar" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="harga">Harga :</label></td>
+          <td><input type="number" id="harga" name="harga" required /></td>
+        </tr>
+        <tr>
+          <td><label for="fasilitas">Fasilitas :</label></td>
+          <td>
+            <textarea id="fasilitas" name="fasilitas" rows="3" required>
+            </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button
+              type="submit"
+              name="tombol"
+              value="cek"
+              style="background-color: blue; color: white"
+            >
+              Simpan
+            </button>
+            <button
+              type="reset"
+              name="tombol"
+              value="cek"
+              style="background-color: red; color: white"
+            >
+              Batal
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </html>
+</html>

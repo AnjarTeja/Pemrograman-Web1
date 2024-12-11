@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data</title>
+  </head>
+  <html>
+<h1>Tambah Data Fasilitas</h1>
+<form>
+  <table>
+    <tr>
+      <td><label for="id">ID :</label></td>
+      <td><input type="number" id="id" name="id" required /></td>
+    </tr>
+    <tr>
+      <td><label for="nama">Nama :</label></td>
+      <td><input type="text" id="nama" name="nama" required /></td>
+    </tr>
+    <tr>
+      <td><label for="fasilitas">Fasilitas :</label></td>
+      <td>
+        <textarea
+          id="fasilitas"
+          name="fasilitas"
+          rows="3"
+          required>
+        </textarea>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="harga-weekend">Harga Weekend :</label></td>
+      <td>
+        <input
+          type="number"
+          id="harga-weekend"
+          name="harga-weekend"
+          required/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="harga-weekday">Harga Weekday :</label></td>
+      <td>
+        <input
+          type="number"
+          id="harga-weekday"
+          name="harga-weekday"
+          required/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="kuota">Kuota :</label></td>
+      <td><input type="number" id="kuota" name="kuota" required /></td>
+    </tr>
+    <tr>
+      <td><label for="jam-buka">Jam Buka :</label></td>
+      <td><input type="time" id="jam-buka" name="jam-buka" required /></td>
+    </tr>
+    <tr>
+      <td><label for="jam-tutup">Jam Tutup :</label></td>
+      <td>
+        <input type="time" id="jam-tutup" name="jam-tutup" required />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button
+          type="submit"
+          name="tombol"
+          value="cek"
+          style="background-color: blue; color: white">Simpan
+        </button>
+        <button
+          type="reset"
+          name="tombol"
+          value="cek"
+          style="background-color: red; color: white">Batal
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

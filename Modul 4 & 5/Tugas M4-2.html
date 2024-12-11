@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data Kamar dan Fasilitas</title>
+    <script>
+      const hargaKamarData = {
+        Standar: 300000,
+        Family: 500000,
+        Deluxe: 700000,
+      };
+      function updateHargaKamar() {
+        const tipeKamar = document.getElementById("tipeKamar").value;
+        const hargaKamar = document.getElementById("hargaKamar");
+        if (tipeKamar && hargaKamarData[tipeKamar]) {
+          hargaKamar.value = hargaKamarData[tipeKamar];
+        } else {
+          hargaKamar.value = "";
+        }
+      }
+      function validasiFormKamar() {
+        const nomorKamar = document.getElementById("nomorKamar").value;
+        const tipeKamar = document.getElementById("tipeKamar").value;
+        const hargaKamar = document.getElementById("hargaKamar").value;
+        if (nomorKamar === "" || tipeKamar === "" || hargaKamar === "") {
+          alert("Harap isi semua data kamar!");
+          return false;
+        }
+        alert("Data kamar berhasil ditambahkan!");
+        return true;
+      }
+      function validasiFormFasilitas() {
+        const kategoriFasilitas =
+          document.getElementById("kategoriFasilitas").value;
+        const namaFasilitas = document.getElementById("namaFasilitas").value;
+        if (kategoriFasilitas === "" || namaFasilitas === "") {
+          alert("Harap isi semua data fasilitas!");
+          return false;
+        }
+        alert("Data fasilitas berhasil ditambahkan!");
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Form Tambah Data Kamar</h2>
+    <form onsubmit="return validasiFormKamar()">
+      <table>
+        <tr>
+          <td><label for="nomorKamar">Nomor Kamar:</label></td>
+          <td>
+            <input type="text" id="nomorKamar" name="nomorKamar" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="tipeKamar">Tipe Kamar:</label></td>
+          <td>
+            <select
+              id="tipeKamar"
+              name="tipeKamar"
+              onchange="updateHargaKamar()"
+              required
+            >
+              <option value="">--Pilih Tipe Kamar--</option>
+              <option value="Standar">Standar</option>
+              <option value="Family">Family</option>
+              <option value="Deluxe">Deluxe</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="hargaKamar">Harga Kamar:</label></td>
+          <td>
+            <input
+              type="number"
+              id="hargaKamar"
+              name="hargaKamar"
+              readonly
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Tambah Kamar" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <hr />
+
+    <h2>Form Tambah Data Fasilitas</h2>
+    <form onsubmit="return validasiFormFasilitas()">
+      <table>
+        <tr>
+          <td><label for="kategoriFasilitas">Kategori Fasilitas:</label></td>
+          <td>
+            <select id="kategoriFasilitas" name="kategoriFasilitas" required>
+              <option value="">--Pilih Kategori Fasilitas--</option>
+              <option value="Umum">Umum</option>
+              <option value="Khusus">Khusus</option>
+              <option value="Ekstra">Ekstra</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="namaFasilitas">Nama Fasilitas:</label></td>
+          <td>
+            <input
+              type="text"
+              id="namaFasilitas"
+              name="namaFasilitas"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Tambah Fasilitas" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
