@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Data Kamar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="file"],
+      textarea {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formTambahKamar">
+      <h2>Tambah Data Kamar</h2>
+      <label for="idKamar">ID Kamar:</label>
+      <input
+        type="text"
+        id="idKamar"
+        name="idKamar"
+        placeholder="Masukkan ID Kamar"
+        required
+      />
+
+      <label for="jenisKamar">Jenis Kamar:</label>
+      <input
+        type="text"
+        id="jenisKamar"
+        name="jenisKamar"
+        placeholder="Masukkan Jenis Kamar"
+        required
+      />
+
+      <label for="gambarKamar">Gambar Kamar:</label>
+      <input
+        type="file"
+        id="gambarKamar"
+        name="gambarKamar"
+        accept="image/*"
+        required
+      />
+
+      <label for="fasilitas">Fasilitas:</label>
+      <textarea
+        id="fasilitas"
+        name="fasilitas"
+        placeholder="Masukkan fasilitas kamar"
+        required
+      ></textarea>
+
+      <label for="harga">Harga:</label>
+      <input
+        type="number"
+        id="harga"
+        name="harga"
+        placeholder="Masukkan Harga (Rp)"
+        required
+      />
+
+      <button type="submit">Tambah Data</button>
+    </form>
+    <script>
+      document
+        .getElementById("formTambahKamar")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const idKamar = document.getElementById("idKamar").value;
+          const jenisKamar = document.getElementById("jenisKamar").value;
+          const gambarKamar = document.getElementById("gambarKamar").files[0];
+          const fasilitas = document.getElementById("fasilitas").value;
+          const harga = document.getElementById("harga").value;
+
+          console.log({
+            idKamar,
+            jenisKamar,
+            gambarKamar,
+            fasilitas,
+            harga,
+          });
+          alert("Data kamar berhasil ditambahkan!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

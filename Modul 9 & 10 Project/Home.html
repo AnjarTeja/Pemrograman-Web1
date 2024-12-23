@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .dropdown-submenu {
+        position: relative;
+      }
+      .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -5px;
+      }
+
+      /* Adjust image size and fit in grid */
+      .room-grid img {
+        object-fit: cover;
+        width: 100%; /* Make images take up full column width */
+        height: 250px; /* Adjust height for consistency and size */
+        border-radius: 8px;
+      }
+
+      .room-grid {
+        display: grid; /* Change to grid layout for better control */
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(300px, 1fr)
+        ); /* Responsive grid with a min width of 300px per image */
+        gap: 15px; /* Add gap between images */
+      }
+
+      iframe {
+        width: 100%; /* Ensure iframes are responsive */
+        height: 150px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <!-- Leftbar -->
+      <aside class="col-md-3">
+        <iframe
+          class="w-100 mb-3"
+          src="https://www.youtube.com/embed/M9-wRqQK3Qc"
+          title="Video 1"
+        ></iframe>
+        <iframe
+          class="w-100 mb-3"
+          src="https://www.youtube.com/embed/K7boNRMffxs"
+          title="Video 2"
+        ></iframe>
+        <iframe
+          class="w-100"
+          src="https://www.youtube.com/embed/gCzVnM_esdg"
+          title="Video 3"
+        ></iframe>
+      </aside>
+      <!-- Main Content -->
+      <main class="col-md-9">
+        <div class="room-grid">
+          <!-- Row 1 -->
+          <div>
+            <img
+              src="./Images/pexels-pixabay-237371.jpg"
+              alt="Room 1"
+              class="img-fluid"
+            />
+          </div>
+          <div>
+            <img
+              src="./Images/blog-tipe-kamar-hotel-yang-wajib-diketahui-47-l.webp"
+              alt="Room 2"
+              class="img-fluid"
+            />
+          </div>
+          <div>
+            <img
+              src="./Images/JAKGH-P573-Grand-Deluxe-Bedroom-City-View.16x9.webp"
+              alt="Room 3"
+              class="img-fluid"
+            />
+          </div>
+          <!-- Row 2 -->
+          <div>
+            <img
+              src="./Images/photo-1542314831-068cd1dbfeeb.jpg"
+              alt="Room 4"
+              class="img-fluid"
+            />
+          </div>
+          <div>
+            <img
+              src="./Images/UPGZM-P0005-Standard-Bedroom-Twin-Reversed-Angle.16x9.webp"
+              alt="Room 5"
+              class="img-fluid"
+            />
+          </div>
+          <div>
+            <img src="./Images/cnn.webp" alt="Room 6" class="img-fluid" />
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
